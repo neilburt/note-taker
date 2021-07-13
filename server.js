@@ -32,12 +32,29 @@ app.post('/api/notes', (req, res) => {
 
   fs.readFile('./db/db.json', (error, data) => {
     if(error) throw error;
-    let jsonFile = JSON.parse(data);
-    jsonFile.push(newNote);
-    console.log('json file', jsonFile)
     
-    fs.writeFile('./db/db.json', JSON.stringify(jsonFile), 'utf-8', (error) => {
+    let notes = JSON.parse(data);
+    notes.push(newNote);
+    
+    fs.writeFile('./db/db.json', JSON.stringify(notes), 'utf-8', (error) => {
       (error) ? console.log(error) : console.log("Note successfully saved.");
+    });
+  });
+
+  res.redirect('/notes');
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+  var noteId = req.params.id;
+
+  fs.readFile('./db/db.json', (error, data) => {
+    if(error) throw error;
+
+    let notes = JSON.parse(data);
+    var filtered = notes.filter(note => note.id !== noteId)
+    
+    fs.writeFile('./db/db.json', JSON.stringify(filtered), 'utf-8', (error) => {
+      (error) ? console.log(error) : console.log("Note successfully deleted.");
     });
   });
 
