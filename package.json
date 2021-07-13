@@ -4,6 +4,7 @@
   "description": "express.js note-taking app",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server1.js"
   },
