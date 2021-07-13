@@ -44,8 +44,8 @@ app.post('/api/notes', (req, res) => {
   res.redirect('/notes');
 });
 
-app.delete('/api/notes/:id', (req, res) => {
-  var noteId = req.params.id;
+app.delete('/api/notes', (req, res) => {
+  var noteId = req.body.id;
 
   fs.readFile('./db/db.json', (error, data) => {
     if(error) throw error;
@@ -58,7 +58,7 @@ app.delete('/api/notes/:id', (req, res) => {
     });
   });
 
-  res.redirect('/notes');
+  res.json({result: "success"});
 });
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
