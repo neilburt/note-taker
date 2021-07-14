@@ -7,6 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 9001;
 
+// routes
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -25,6 +26,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+// saves notes
 app.post('/api/notes', (req, res) => {
   var newNote = req.body;
   var newId = uniquid();
@@ -44,6 +46,7 @@ app.post('/api/notes', (req, res) => {
   res.redirect('/notes');
 });
 
+// deletes notes
 app.delete('/api/notes', (req, res) => {
   var noteId = req.body.id;
 
