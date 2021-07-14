@@ -5,7 +5,7 @@ const uniquid = require('uniquid');
 
 const app = express();
 
-const PORT = process.env.port || 9001;
+const PORT = process.env.PORT || 9001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
