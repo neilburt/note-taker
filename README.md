@@ -24,11 +24,11 @@ Check out the [deployed app](https://drive.google.com/file/d/1fr8tCEfEZVz9RmoMA9
 
 ## Screenshots  
 
-![Screenshot of Team Profile Generator being used in VS Code](./assets/images/screenshot.jpg)  
+![Screenshot of Note Taker](./assets/images/screenshot.jpg)  
 
 ---  
 
-![Screenshot of Team Profile Generator being used in VS Code further along](./assets/images/screenshot2.jpg)  
+![Screenshot of Note Taker](./assets/images/screenshot2.jpg)  
 
 ## Contributing  
 
